@@ -13137,3 +13137,275 @@
 {"level":"debug","ts":"2025-10-28T12:49:08.480Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":0,"leaves":2}
 {"level":"debug","ts":"2025-10-28T12:49:08.481Z","caller":"server/session_ws.go:554","msg":"Closed client connection","uid":"59464b65-b96d-4ce5-b205-e2fb524ee615","sid":"4f3851ef-b3fc-11f0-aafa-006100a0eb06"}
 {"level":"debug","ts":"2025-10-28T12:49:08.482Z","caller":"server/message_router.go:66","msg":"No session to route to","mid":"f7d0c1c9-8b5c-449f-90e9-afc2f9d4220d","sid":"4f3bf925-b3fc-11f0-aafa-006100a0eb06"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:328","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.username"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:332","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.password"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:336","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.signing_key"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:340","msg":"WARNING: insecure default parameter value, change this for production!","param":"socket.server_key"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:344","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:348","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.refresh_encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:21:07.239Z","caller":"server/config.go:352","msg":"WARNING: insecure default parameter value, change this for production!","param":"runtime.http_key"}
+{"level":"info","ts":"2025-10-28T13:21:07.239Z","caller":"main.go:142","msg":"Nakama starting"}
+{"level":"info","ts":"2025-10-28T13:21:07.239Z","caller":"main.go:143","msg":"Node","name":"nakama","version":"3.32.0+ddd03c8","runtime":"go1.25.0","cpu":12,"proc":12}
+{"level":"info","ts":"2025-10-28T13:21:07.239Z","caller":"main.go:144","msg":"Data directory","path":"/nakama/data"}
+{"level":"info","ts":"2025-10-28T13:21:07.239Z","caller":"main.go:155","msg":"Database connections","dsns":["postgres:xxxxx@postgres:5432/nakama"]}
+{"level":"debug","ts":"2025-10-28T13:21:07.240Z","caller":"server/db.go:116","msg":"Complete database connection URL","raw_url":"postgres://postgres:localdb@postgres:5432/nakama?sslmode=prefer"}
+{"level":"info","ts":"2025-10-28T13:21:07.249Z","caller":"server/db.go:140","msg":"Database information","version":"PostgreSQL 12.2 on x86_64-pc-linux-musl, compiled by gcc (Alpine 9.2.0) 9.2.0, 64-bit"}
+{"level":"info","ts":"2025-10-28T13:21:07.270Z","caller":"server/leaderboard_rank_cache.go:140","msg":"Initializing leaderboard rank cache"}
+{"level":"info","ts":"2025-10-28T13:21:07.271Z","caller":"server/leaderboard_rank_cache.go:201","msg":"Leaderboard rank cache initialization completed successfully","cached":[],"skipped":[],"duration":"268.206µs"}
+{"level":"info","ts":"2025-10-28T13:21:07.272Z","caller":"server/runtime.go:666","msg":"Initialising runtime","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:21:07.272Z","caller":"server/runtime.go:673","msg":"Initialising runtime event queue processor"}
+{"level":"info","ts":"2025-10-28T13:21:07.273Z","caller":"server/runtime.go:675","msg":"Runtime event queue processor started","size":65536,"workers":8}
+{"level":"info","ts":"2025-10-28T13:21:07.276Z","caller":"server/runtime_go.go:2956","msg":"Initialising Go runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:21:07.314Z","caller":"./main2.go:34","msg":"✅ Backend module loaded","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:21:07.314Z","caller":"./main2.go:45","msg":"✅ Match type 'xoxo' registered","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:21:07.314Z","caller":"server/runtime_go.go:2980","msg":"Go runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:21:07.314Z","caller":"server/runtime_lua.go:119","msg":"Initialising Lua runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:21:07.317Z","caller":"server/runtime_lua.go:1276","msg":"Lua runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:21:07.317Z","caller":"server/runtime_lua.go:1279","msg":"Allocating minimum Lua runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:21:07.317Z","caller":"server/runtime_lua.go:1287","msg":"Allocated minimum Lua runtime pool"}
+{"level":"info","ts":"2025-10-28T13:21:07.317Z","caller":"server/runtime_javascript.go:651","msg":"Initialising JavaScript runtime provider","path":"/nakama/data/modules","entrypoint":""}
+{"level":"info","ts":"2025-10-28T13:21:07.320Z","caller":"server/runtime_javascript.go:1772","msg":"JavaScript runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:21:07.320Z","caller":"server/runtime_javascript.go:1775","msg":"Allocating minimum JavaScript runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:21:07.321Z","caller":"server/runtime_javascript.go:1783","msg":"Allocated minimum JavaScript runtime pool"}
+{"level":"info","ts":"2025-10-28T13:21:07.321Z","caller":"server/runtime.go:714","msg":"Found runtime modules","count":1,"modules":["xoxo.so"]}
+{"level":"info","ts":"2025-10-28T13:21:07.321Z","caller":"server/runtime.go:2575","msg":"Registered Go runtime Matchmaker Matched function invocation"}
+{"level":"info","ts":"2025-10-28T13:21:07.321Z","caller":"server/runtime.go:2727","msg":"Registered Go runtime Match creation function invocation","name":"xoxo"}
+{"level":"info","ts":"2025-10-28T13:21:07.322Z","caller":"server/leaderboard_scheduler.go:109","msg":"Leaderboard scheduler start"}
+{"level":"info","ts":"2025-10-28T13:21:07.322Z","caller":"server/leaderboard_scheduler.go:304","msg":"Leaderboard scheduler update","end_active":"-1ns","end_active_count":0,"expiry":"-1ns","expiry_count":0}
+{"level":"info","ts":"2025-10-28T13:21:07.323Z","caller":"server/api.go:156","msg":"Starting API server for gRPC requests","port":7349}
+{"level":"info","ts":"2025-10-28T13:21:07.329Z","caller":"server/api.go:318","msg":"Starting API server gateway for HTTP requests","port":7350}
+{"level":"info","ts":"2025-10-28T13:21:07.333Z","caller":"server/console.go:241","msg":"Starting Console server for gRPC requests","port":7348}
+{"level":"info","ts":"2025-10-28T13:21:07.335Z","caller":"server/console.go:353","msg":"Starting Console server gateway for HTTP requests","port":7351}
+{"level":"info","ts":"2025-10-28T13:21:08.141Z","caller":"main.go:241","msg":"Startup done"}
+{"level":"info","ts":"2025-10-28T13:46:30.333Z","caller":"server/shutdown.go:50","msg":"Shutdown started"}
+{"level":"info","ts":"2025-10-28T13:46:30.334Z","caller":"server/shutdown.go:58","msg":"All authoritative matches stopped"}
+{"level":"info","ts":"2025-10-28T13:46:30.337Z","caller":"main.go:263","msg":"Shutdown complete"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:328","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.username"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:332","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.password"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:336","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.signing_key"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:340","msg":"WARNING: insecure default parameter value, change this for production!","param":"socket.server_key"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:344","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:348","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.refresh_encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:47:07.920Z","caller":"server/config.go:352","msg":"WARNING: insecure default parameter value, change this for production!","param":"runtime.http_key"}
+{"level":"info","ts":"2025-10-28T13:47:07.920Z","caller":"main.go:142","msg":"Nakama starting"}
+{"level":"info","ts":"2025-10-28T13:47:07.920Z","caller":"main.go:143","msg":"Node","name":"nakama","version":"3.32.0+ddd03c8","runtime":"go1.25.0","cpu":12,"proc":12}
+{"level":"info","ts":"2025-10-28T13:47:07.920Z","caller":"main.go:144","msg":"Data directory","path":"/nakama/data"}
+{"level":"info","ts":"2025-10-28T13:47:07.920Z","caller":"main.go:155","msg":"Database connections","dsns":["postgres:xxxxx@postgres:5432/nakama"]}
+{"level":"debug","ts":"2025-10-28T13:47:07.921Z","caller":"server/db.go:116","msg":"Complete database connection URL","raw_url":"postgres://postgres:localdb@postgres:5432/nakama?sslmode=prefer"}
+{"level":"info","ts":"2025-10-28T13:47:07.931Z","caller":"server/db.go:140","msg":"Database information","version":"PostgreSQL 12.2 on x86_64-pc-linux-musl, compiled by gcc (Alpine 9.2.0) 9.2.0, 64-bit"}
+{"level":"info","ts":"2025-10-28T13:47:07.950Z","caller":"server/leaderboard_rank_cache.go:140","msg":"Initializing leaderboard rank cache"}
+{"level":"info","ts":"2025-10-28T13:47:07.950Z","caller":"server/leaderboard_rank_cache.go:201","msg":"Leaderboard rank cache initialization completed successfully","cached":[],"skipped":[],"duration":"116.664µs"}
+{"level":"info","ts":"2025-10-28T13:47:07.950Z","caller":"server/runtime.go:666","msg":"Initialising runtime","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:47:07.951Z","caller":"server/runtime.go:673","msg":"Initialising runtime event queue processor"}
+{"level":"info","ts":"2025-10-28T13:47:07.951Z","caller":"server/runtime.go:675","msg":"Runtime event queue processor started","size":65536,"workers":8}
+{"level":"info","ts":"2025-10-28T13:47:07.951Z","caller":"server/runtime_go.go:2956","msg":"Initialising Go runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:47:07.963Z","caller":"./main2.go:34","msg":"✅ Backend module loaded","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"./main2.go:45","msg":"✅ Match type 'xoxo' registered","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"server/runtime_go.go:2980","msg":"Go runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"server/runtime_lua.go:119","msg":"Initialising Lua runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"server/runtime_lua.go:1276","msg":"Lua runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"server/runtime_lua.go:1279","msg":"Allocating minimum Lua runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"server/runtime_lua.go:1287","msg":"Allocated minimum Lua runtime pool"}
+{"level":"info","ts":"2025-10-28T13:47:07.964Z","caller":"server/runtime_javascript.go:651","msg":"Initialising JavaScript runtime provider","path":"/nakama/data/modules","entrypoint":""}
+{"level":"info","ts":"2025-10-28T13:47:07.965Z","caller":"server/runtime_javascript.go:1772","msg":"JavaScript runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:47:07.965Z","caller":"server/runtime_javascript.go:1775","msg":"Allocating minimum JavaScript runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:47:07.965Z","caller":"server/runtime_javascript.go:1783","msg":"Allocated minimum JavaScript runtime pool"}
+{"level":"info","ts":"2025-10-28T13:47:07.965Z","caller":"server/runtime.go:714","msg":"Found runtime modules","count":1,"modules":["xoxo.so"]}
+{"level":"info","ts":"2025-10-28T13:47:07.965Z","caller":"server/runtime.go:2575","msg":"Registered Go runtime Matchmaker Matched function invocation"}
+{"level":"info","ts":"2025-10-28T13:47:07.965Z","caller":"server/runtime.go:2727","msg":"Registered Go runtime Match creation function invocation","name":"xoxo"}
+{"level":"info","ts":"2025-10-28T13:47:07.966Z","caller":"server/leaderboard_scheduler.go:109","msg":"Leaderboard scheduler start"}
+{"level":"info","ts":"2025-10-28T13:47:07.966Z","caller":"server/leaderboard_scheduler.go:304","msg":"Leaderboard scheduler update","end_active":"-1ns","end_active_count":0,"expiry":"-1ns","expiry_count":0}
+{"level":"info","ts":"2025-10-28T13:47:07.966Z","caller":"server/api.go:156","msg":"Starting API server for gRPC requests","port":7349}
+{"level":"info","ts":"2025-10-28T13:47:07.967Z","caller":"server/api.go:318","msg":"Starting API server gateway for HTTP requests","port":7350}
+{"level":"info","ts":"2025-10-28T13:47:07.971Z","caller":"server/console.go:241","msg":"Starting Console server for gRPC requests","port":7348}
+{"level":"info","ts":"2025-10-28T13:47:07.971Z","caller":"server/console.go:353","msg":"Starting Console server gateway for HTTP requests","port":7351}
+{"level":"info","ts":"2025-10-28T13:47:08.916Z","caller":"main.go:241","msg":"Startup done"}
+{"level":"info","ts":"2025-10-28T13:47:45.430Z","caller":"server/session_ws.go:83","msg":"New WebSocket session connected","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","format":0}
+{"level":"debug","ts":"2025-10-28T13:47:45.431Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:47:45.434Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"1","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:47:45.435Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"1\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:47:45.436Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchmakerAdd message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"2","message":{"MatchmakerAdd":{"min_count":2,"max_count":2,"query":"*"}}}
+{"level":"debug","ts":"2025-10-28T13:47:45.440Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_MatchmakerTicket message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"2\" matchmaker_ticket:{ticket:\"d7e44b8b-0a34-4d5e-ab5c-a95cbfd37678\"}"}
+{"level":"info","ts":"2025-10-28T13:47:48.473Z","caller":"server/session_ws.go:83","msg":"New WebSocket session connected","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","format":0}
+{"level":"debug","ts":"2025-10-28T13:47:48.473Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:47:48.476Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"1","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:47:48.476Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"1\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:47:48.477Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchmakerAdd message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"2","message":{"MatchmakerAdd":{"min_count":2,"max_count":2,"query":"*"}}}
+{"level":"debug","ts":"2025-10-28T13:47:48.479Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_MatchmakerTicket message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"2\" matchmaker_ticket:{ticket:\"009ac600-3315-45aa-8897-eb17601d4ba0\"}"}
+{"level":"info","ts":"2025-10-28T13:47:52.988Z","caller":"./main2.go:304","msg":"🎯 Matchmaker matched:%!(EXTRA int=2, string=players)","runtime":"go","mode":"matchmaker"}
+{"level":"info","ts":"2025-10-28T13:47:52.991Z","caller":"./main2.go:68","msg":"✅ Match initialized:%!(EXTRA string=match-1761659272991545715)","mid":"d1f00a33-7703-4d28-9e60-dca6d9a498c1","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:47:52.991Z","caller":"server/match_handler.go:204","msg":"Match started","mid":"d1f00a33-7703-4d28-9e60-dca6d9a498c1"}
+{"level":"info","ts":"2025-10-28T13:47:52.992Z","caller":"./main2.go:314","msg":"✅ Created match:%!(EXTRA string=d1f00a33-7703-4d28-9e60-dca6d9a498c1.nakama)","runtime":"go","mode":"matchmaker"}
+{"level":"debug","ts":"2025-10-28T13:47:52.996Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchJoin message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"3","message":{"MatchJoin":{"Id":{"MatchId":"d1f00a33-7703-4d28-9e60-dca6d9a498c1.nakama"}}}}
+{"level":"debug","ts":"2025-10-28T13:47:52.997Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchJoin message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"3","message":{"MatchJoin":{"Id":{"MatchId":"d1f00a33-7703-4d28-9e60-dca6d9a498c1.nakama"}}}}
+{"level":"debug","ts":"2025-10-28T13:47:52.997Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"info","ts":"2025-10-28T13:47:52.997Z","caller":"./main2.go:122","msg":"🎮 Sent role assignment for match:%!(EXTRA string=match-1761659272991545715)","mid":"d1f00a33-7703-4d28-9e60-dca6d9a498c1","runtime":"go"}
+{"level":"debug","ts":"2025-10-28T13:47:52.997Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Match message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"3\" match:{match_id:\"d1f00a33-7703-4d28-9e60-dca6d9a498c1.nakama\" authoritative:true label:{value:\"xoxo\"} size:1 presences:{user_id:\"02194c7b-2c02-4016-a9d4-efc539007257\" session_id:\"b0a18641-b404-11f0-ad1c-006100a0eb06\" username:\"UAmrsgEwXP\"} self:{user_id:\"338682de-9898-40d3-b184-cb5588ce08fe\" session_id:\"aed15071-b404-11f0-ad1c-006100a0eb06\" username:\"dofEpkzXaJ\"}}"}
+{"level":"debug","ts":"2025-10-28T13:47:52.997Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Match message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"3\" match:{match_id:\"d1f00a33-7703-4d28-9e60-dca6d9a498c1.nakama\" authoritative:true label:{value:\"xoxo\"} self:{user_id:\"02194c7b-2c02-4016-a9d4-efc539007257\" session_id:\"b0a18641-b404-11f0-ad1c-006100a0eb06\" username:\"UAmrsgEwXP\"}}"}
+{"level":"debug","ts":"2025-10-28T13:47:52.998Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:47:54.445Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchDataSend message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","message":{"MatchDataSend":{"match_id":"d1f00a33-7703-4d28-9e60-dca6d9a498c1.nakama","op_code":1,"data":"eyJ4IjowLCJ5IjoyfQ=="}}}
+{"level":"debug","ts":"2025-10-28T13:47:55.447Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"4","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:47:55.448Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"4\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:47:58.491Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"4","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:47:58.491Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"4\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:05.851Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"5","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:05.852Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"5\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:08.844Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"5","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:08.845Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"5\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:16.840Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"6","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:16.840Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"6\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:18.851Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"6","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:18.852Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"6\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:27.847Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","cid":"7","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:27.848Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"338682de-9898-40d3-b184-cb5588ce08fe","sid":"aed15071-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"7\" pong:{}"}
+{"level":"info","ts":"2025-10-28T13:48:29.710Z","caller":"server/shutdown.go:50","msg":"Shutdown started"}
+{"level":"info","ts":"2025-10-28T13:48:29.710Z","caller":"server/shutdown.go:58","msg":"All authoritative matches stopped"}
+{"level":"info","ts":"2025-10-28T13:48:29.711Z","caller":"main.go:263","msg":"Shutdown complete"}
+{"level":"debug","ts":"2025-10-28T13:48:29.841Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","cid":"7","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:29.841Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"02194c7b-2c02-4016-a9d4-efc539007257","sid":"b0a18641-b404-11f0-ad1c-006100a0eb06","envelope":"cid:\"7\" pong:{}"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:328","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.username"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:332","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.password"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:336","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.signing_key"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:340","msg":"WARNING: insecure default parameter value, change this for production!","param":"socket.server_key"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:344","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:348","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.refresh_encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:48:47.276Z","caller":"server/config.go:352","msg":"WARNING: insecure default parameter value, change this for production!","param":"runtime.http_key"}
+{"level":"info","ts":"2025-10-28T13:48:47.276Z","caller":"main.go:142","msg":"Nakama starting"}
+{"level":"info","ts":"2025-10-28T13:48:47.276Z","caller":"main.go:143","msg":"Node","name":"nakama","version":"3.32.0+ddd03c8","runtime":"go1.25.0","cpu":12,"proc":12}
+{"level":"info","ts":"2025-10-28T13:48:47.276Z","caller":"main.go:144","msg":"Data directory","path":"/nakama/data"}
+{"level":"info","ts":"2025-10-28T13:48:47.276Z","caller":"main.go:155","msg":"Database connections","dsns":["postgres:xxxxx@postgres:5432/nakama"]}
+{"level":"debug","ts":"2025-10-28T13:48:47.277Z","caller":"server/db.go:116","msg":"Complete database connection URL","raw_url":"postgres://postgres:localdb@postgres:5432/nakama?sslmode=prefer"}
+{"level":"info","ts":"2025-10-28T13:48:47.284Z","caller":"server/db.go:140","msg":"Database information","version":"PostgreSQL 12.2 on x86_64-pc-linux-musl, compiled by gcc (Alpine 9.2.0) 9.2.0, 64-bit"}
+{"level":"info","ts":"2025-10-28T13:48:47.298Z","caller":"server/leaderboard_rank_cache.go:140","msg":"Initializing leaderboard rank cache"}
+{"level":"info","ts":"2025-10-28T13:48:47.299Z","caller":"server/runtime.go:666","msg":"Initialising runtime","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:48:47.299Z","caller":"server/leaderboard_rank_cache.go:201","msg":"Leaderboard rank cache initialization completed successfully","cached":[],"skipped":[],"duration":"368.966µs"}
+{"level":"info","ts":"2025-10-28T13:48:47.299Z","caller":"server/runtime.go:673","msg":"Initialising runtime event queue processor"}
+{"level":"info","ts":"2025-10-28T13:48:47.299Z","caller":"server/runtime.go:675","msg":"Runtime event queue processor started","size":65536,"workers":8}
+{"level":"info","ts":"2025-10-28T13:48:47.299Z","caller":"server/runtime_go.go:2956","msg":"Initialising Go runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:48:47.310Z","caller":"./main2.go:34","msg":"✅ Backend module loaded","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:48:47.310Z","caller":"./main2.go:45","msg":"✅ Match type 'xoxo' registered","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:48:47.310Z","caller":"server/runtime_go.go:2980","msg":"Go runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:48:47.310Z","caller":"server/runtime_lua.go:119","msg":"Initialising Lua runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_lua.go:1276","msg":"Lua runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_lua.go:1279","msg":"Allocating minimum Lua runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_lua.go:1287","msg":"Allocated minimum Lua runtime pool"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_javascript.go:651","msg":"Initialising JavaScript runtime provider","path":"/nakama/data/modules","entrypoint":""}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_javascript.go:1772","msg":"JavaScript runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_javascript.go:1775","msg":"Allocating minimum JavaScript runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime_javascript.go:1783","msg":"Allocated minimum JavaScript runtime pool"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime.go:714","msg":"Found runtime modules","count":1,"modules":["xoxo.so"]}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime.go:2575","msg":"Registered Go runtime Matchmaker Matched function invocation"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/runtime.go:2727","msg":"Registered Go runtime Match creation function invocation","name":"xoxo"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/leaderboard_scheduler.go:109","msg":"Leaderboard scheduler start"}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/leaderboard_scheduler.go:304","msg":"Leaderboard scheduler update","end_active":"-1ns","end_active_count":0,"expiry":"-1ns","expiry_count":0}
+{"level":"info","ts":"2025-10-28T13:48:47.311Z","caller":"server/api.go:156","msg":"Starting API server for gRPC requests","port":7349}
+{"level":"info","ts":"2025-10-28T13:48:47.312Z","caller":"server/api.go:318","msg":"Starting API server gateway for HTTP requests","port":7350}
+{"level":"info","ts":"2025-10-28T13:48:47.314Z","caller":"server/console.go:241","msg":"Starting Console server for gRPC requests","port":7348}
+{"level":"info","ts":"2025-10-28T13:48:47.315Z","caller":"server/console.go:353","msg":"Starting Console server gateway for HTTP requests","port":7351}
+{"level":"info","ts":"2025-10-28T13:48:48.245Z","caller":"main.go:241","msg":"Startup done"}
+{"level":"info","ts":"2025-10-28T13:48:53.407Z","caller":"server/session_ws.go:83","msg":"New WebSocket session connected","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","format":0}
+{"level":"debug","ts":"2025-10-28T13:48:53.407Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:48:53.411Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","cid":"1","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:53.412Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"1\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:53.413Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchmakerAdd message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","cid":"2","message":{"MatchmakerAdd":{"min_count":2,"max_count":2,"query":"*"}}}
+{"level":"debug","ts":"2025-10-28T13:48:53.417Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_MatchmakerTicket message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"2\" matchmaker_ticket:{ticket:\"f3016ee4-9536-46a8-8230-b79d6bb860ca\"}"}
+{"level":"info","ts":"2025-10-28T13:48:55.874Z","caller":"server/session_ws.go:83","msg":"New WebSocket session connected","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","format":0}
+{"level":"debug","ts":"2025-10-28T13:48:55.874Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:48:55.877Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","cid":"1","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:48:55.877Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"1\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:48:55.878Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchmakerAdd message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","cid":"2","message":{"MatchmakerAdd":{"min_count":2,"max_count":2,"query":"*"}}}
+{"level":"debug","ts":"2025-10-28T13:48:55.878Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_MatchmakerTicket message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"2\" matchmaker_ticket:{ticket:\"cc46f4da-10cf-486a-bf0d-8bbf1aaf8389\"}"}
+{"level":"info","ts":"2025-10-28T13:49:02.312Z","caller":"./main2.go:304","msg":"🎯 Matchmaker matched:%!(EXTRA int=2, string=players)","runtime":"go","mode":"matchmaker"}
+{"level":"info","ts":"2025-10-28T13:49:02.313Z","caller":"./main2.go:68","msg":"✅ Match initialized:%!(EXTRA string=match-1761659342313195207)","mid":"a1c05742-9737-4940-97f7-6142619cf78f","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:49:02.313Z","caller":"server/match_handler.go:204","msg":"Match started","mid":"a1c05742-9737-4940-97f7-6142619cf78f"}
+{"level":"info","ts":"2025-10-28T13:49:02.313Z","caller":"./main2.go:314","msg":"✅ Created match:%!(EXTRA string=a1c05742-9737-4940-97f7-6142619cf78f.nakama)","runtime":"go","mode":"matchmaker"}
+{"level":"debug","ts":"2025-10-28T13:49:02.319Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchJoin message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","cid":"3","message":{"MatchJoin":{"Id":{"MatchId":"a1c05742-9737-4940-97f7-6142619cf78f.nakama"}}}}
+{"level":"debug","ts":"2025-10-28T13:49:02.320Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Match message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"3\" match:{match_id:\"a1c05742-9737-4940-97f7-6142619cf78f.nakama\" authoritative:true label:{value:\"xoxo\"} self:{user_id:\"eab09648-df91-41fc-8907-abaae26de825\" session_id:\"d755aefb-b404-11f0-9dc7-006100a0eb06\" username:\"mKlIWblCJl\"}}"}
+{"level":"debug","ts":"2025-10-28T13:49:02.320Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:49:02.325Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchJoin message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","cid":"3","message":{"MatchJoin":{"Id":{"MatchId":"a1c05742-9737-4940-97f7-6142619cf78f.nakama"}}}}
+{"level":"info","ts":"2025-10-28T13:49:02.325Z","caller":"./main2.go:122","msg":"🎮 Sent role assignment for match:%!(EXTRA string=match-1761659342313195207)","mid":"a1c05742-9737-4940-97f7-6142619cf78f","runtime":"go"}
+{"level":"debug","ts":"2025-10-28T13:49:02.325Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:49:02.325Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Match message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"3\" match:{match_id:\"a1c05742-9737-4940-97f7-6142619cf78f.nakama\" authoritative:true label:{value:\"xoxo\"} size:1 presences:{user_id:\"eab09648-df91-41fc-8907-abaae26de825\" session_id:\"d755aefb-b404-11f0-9dc7-006100a0eb06\" username:\"mKlIWblCJl\"} self:{user_id:\"191d68b1-722c-4564-946e-64640bfcebce\" session_id:\"d8ce2ba5-b404-11f0-9dc7-006100a0eb06\" username:\"PycMdczaIJ\"}}"}
+{"level":"debug","ts":"2025-10-28T13:49:03.417Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","cid":"4","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:49:03.417Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"4\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:49:05.994Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchDataSend message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","message":{"MatchDataSend":{"match_id":"a1c05742-9737-4940-97f7-6142619cf78f.nakama","op_code":1,"data":"eyJ4IjowLCJ5IjoyfQ=="}}}
+{"level":"debug","ts":"2025-10-28T13:49:06.848Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","cid":"4","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:49:06.849Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","envelope":"cid:\"4\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:49:08.366Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchDataSend message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","message":{"MatchDataSend":{"match_id":"a1c05742-9737-4940-97f7-6142619cf78f.nakama","op_code":1,"data":"eyJ4IjowLCJ5IjowfQ=="}}}
+{"level":"debug","ts":"2025-10-28T13:49:10.198Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchDataSend message","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06","message":{"MatchDataSend":{"match_id":"a1c05742-9737-4940-97f7-6142619cf78f.nakama","op_code":1,"data":"eyJ4IjoxLCJ5IjoyfQ=="}}}
+{"level":"debug","ts":"2025-10-28T13:49:11.945Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchDataSend message","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06","message":{"MatchDataSend":{"match_id":"a1c05742-9737-4940-97f7-6142619cf78f.nakama","op_code":1,"data":"eyJ4IjoxLCJ5IjowfQ=="}}}
+{"level":"info","ts":"2025-10-28T13:49:13.064Z","caller":"server/session_ws.go:458","msg":"Cleaning up closed client connection","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:13.064Z","caller":"server/session_ws.go:466","msg":"Cleaned up closed connection matchmaker","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:13.065Z","caller":"server/session_ws.go:470","msg":"Cleaned up closed connection tracker","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:13.065Z","caller":"server/session_ws.go:474","msg":"Cleaned up closed connection status registry","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:13.065Z","caller":"server/session_ws.go:478","msg":"Cleaned up closed connection session registry","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06"}
+{"level":"debug","ts":"2025-10-28T13:49:13.065Z","caller":"server/session_ws.go:554","msg":"Closed client connection","uid":"eab09648-df91-41fc-8907-abaae26de825","sid":"d755aefb-b404-11f0-9dc7-006100a0eb06"}
+{"level":"debug","ts":"2025-10-28T13:49:13.065Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":0,"leaves":2}
+{"level":"info","ts":"2025-10-28T13:49:14.074Z","caller":"server/session_ws.go:458","msg":"Cleaning up closed client connection","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:14.074Z","caller":"server/session_ws.go:466","msg":"Cleaned up closed connection matchmaker","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:14.074Z","caller":"server/session_ws.go:470","msg":"Cleaned up closed connection tracker","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:14.074Z","caller":"server/session_ws.go:474","msg":"Cleaned up closed connection status registry","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:14.074Z","caller":"server/session_ws.go:478","msg":"Cleaned up closed connection session registry","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06"}
+{"level":"debug","ts":"2025-10-28T13:49:14.074Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":0,"leaves":2}
+{"level":"debug","ts":"2025-10-28T13:49:14.074Z","caller":"server/session_ws.go:554","msg":"Closed client connection","uid":"191d68b1-722c-4564-946e-64640bfcebce","sid":"d8ce2ba5-b404-11f0-9dc7-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:49:24.768Z","caller":"server/shutdown.go:50","msg":"Shutdown started"}
+{"level":"info","ts":"2025-10-28T13:49:24.769Z","caller":"server/shutdown.go:58","msg":"All authoritative matches stopped"}
+{"level":"info","ts":"2025-10-28T13:49:24.771Z","caller":"main.go:263","msg":"Shutdown complete"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:328","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.username"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:332","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.password"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:336","msg":"WARNING: insecure default parameter value, change this for production!","param":"console.signing_key"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:340","msg":"WARNING: insecure default parameter value, change this for production!","param":"socket.server_key"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:344","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:348","msg":"WARNING: insecure default parameter value, change this for production!","param":"session.refresh_encryption_key"}
+{"level":"warn","ts":"2025-10-28T13:49:44.499Z","caller":"server/config.go:352","msg":"WARNING: insecure default parameter value, change this for production!","param":"runtime.http_key"}
+{"level":"info","ts":"2025-10-28T13:49:44.499Z","caller":"main.go:142","msg":"Nakama starting"}
+{"level":"info","ts":"2025-10-28T13:49:44.499Z","caller":"main.go:143","msg":"Node","name":"nakama","version":"3.32.0+ddd03c8","runtime":"go1.25.0","cpu":12,"proc":12}
+{"level":"info","ts":"2025-10-28T13:49:44.499Z","caller":"main.go:144","msg":"Data directory","path":"/nakama/data"}
+{"level":"info","ts":"2025-10-28T13:49:44.499Z","caller":"main.go:155","msg":"Database connections","dsns":["postgres:xxxxx@postgres:5432/nakama"]}
+{"level":"debug","ts":"2025-10-28T13:49:44.501Z","caller":"server/db.go:116","msg":"Complete database connection URL","raw_url":"postgres://postgres:localdb@postgres:5432/nakama?sslmode=prefer"}
+{"level":"info","ts":"2025-10-28T13:49:44.509Z","caller":"server/db.go:140","msg":"Database information","version":"PostgreSQL 12.2 on x86_64-pc-linux-musl, compiled by gcc (Alpine 9.2.0) 9.2.0, 64-bit"}
+{"level":"info","ts":"2025-10-28T13:49:44.522Z","caller":"server/leaderboard_rank_cache.go:140","msg":"Initializing leaderboard rank cache"}
+{"level":"info","ts":"2025-10-28T13:49:44.522Z","caller":"server/leaderboard_rank_cache.go:201","msg":"Leaderboard rank cache initialization completed successfully","cached":[],"skipped":[],"duration":"356.575µs"}
+{"level":"info","ts":"2025-10-28T13:49:44.523Z","caller":"server/runtime.go:666","msg":"Initialising runtime","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:49:44.523Z","caller":"server/runtime.go:673","msg":"Initialising runtime event queue processor"}
+{"level":"info","ts":"2025-10-28T13:49:44.524Z","caller":"server/runtime.go:675","msg":"Runtime event queue processor started","size":65536,"workers":8}
+{"level":"info","ts":"2025-10-28T13:49:44.524Z","caller":"server/runtime_go.go:2956","msg":"Initialising Go runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:49:44.541Z","caller":"./main2.go:34","msg":"✅ Backend module loaded","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:49:44.541Z","caller":"./main2.go:45","msg":"✅ Match type 'xoxo' registered","runtime":"go"}
+{"level":"info","ts":"2025-10-28T13:49:44.541Z","caller":"server/runtime_go.go:2980","msg":"Go runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:49:44.541Z","caller":"server/runtime_lua.go:119","msg":"Initialising Lua runtime provider","path":"/nakama/data/modules"}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_lua.go:1276","msg":"Lua runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_lua.go:1279","msg":"Allocating minimum Lua runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_lua.go:1287","msg":"Allocated minimum Lua runtime pool"}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_javascript.go:651","msg":"Initialising JavaScript runtime provider","path":"/nakama/data/modules","entrypoint":""}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_javascript.go:1772","msg":"JavaScript runtime modules loaded"}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_javascript.go:1775","msg":"Allocating minimum JavaScript runtime pool","count":16}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime_javascript.go:1783","msg":"Allocated minimum JavaScript runtime pool"}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime.go:714","msg":"Found runtime modules","count":1,"modules":["xoxo.so"]}
+{"level":"info","ts":"2025-10-28T13:49:44.542Z","caller":"server/runtime.go:2575","msg":"Registered Go runtime Matchmaker Matched function invocation"}
+{"level":"info","ts":"2025-10-28T13:49:44.543Z","caller":"server/runtime.go:2727","msg":"Registered Go runtime Match creation function invocation","name":"xoxo"}
+{"level":"info","ts":"2025-10-28T13:49:44.543Z","caller":"server/leaderboard_scheduler.go:109","msg":"Leaderboard scheduler start"}
+{"level":"info","ts":"2025-10-28T13:49:44.543Z","caller":"server/leaderboard_scheduler.go:304","msg":"Leaderboard scheduler update","end_active":"-1ns","end_active_count":0,"expiry":"-1ns","expiry_count":0}
+{"level":"info","ts":"2025-10-28T13:49:44.543Z","caller":"server/api.go:156","msg":"Starting API server for gRPC requests","port":7349}
+{"level":"info","ts":"2025-10-28T13:49:44.550Z","caller":"server/api.go:318","msg":"Starting API server gateway for HTTP requests","port":7350}
+{"level":"info","ts":"2025-10-28T13:49:44.555Z","caller":"server/console.go:241","msg":"Starting Console server for gRPC requests","port":7348}
+{"level":"info","ts":"2025-10-28T13:49:44.556Z","caller":"server/console.go:353","msg":"Starting Console server gateway for HTTP requests","port":7351}
+{"level":"info","ts":"2025-10-28T13:49:45.485Z","caller":"main.go:241","msg":"Startup done"}
+{"level":"info","ts":"2025-10-28T13:49:54.788Z","caller":"server/session_ws.go:83","msg":"New WebSocket session connected","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","format":0}
+{"level":"debug","ts":"2025-10-28T13:49:54.789Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":1,"leaves":0}
+{"level":"debug","ts":"2025-10-28T13:49:54.792Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","cid":"1","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:49:54.793Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","envelope":"cid:\"1\" pong:{}"}
+{"level":"debug","ts":"2025-10-28T13:49:54.793Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_MatchmakerAdd message","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","cid":"2","message":{"MatchmakerAdd":{"min_count":2,"max_count":2,"query":"*"}}}
+{"level":"debug","ts":"2025-10-28T13:49:54.797Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_MatchmakerTicket message","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","envelope":"cid:\"2\" matchmaker_ticket:{ticket:\"a7e12711-5e40-4546-9818-81c90b76a1b0\"}"}
+{"level":"debug","ts":"2025-10-28T13:50:04.850Z","caller":"server/pipeline.go:65","msg":"Received *rtapi.Envelope_Ping message","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","cid":"3","message":{"Ping":{}}}
+{"level":"debug","ts":"2025-10-28T13:50:04.850Z","caller":"server/session_ws.go:412","msg":"Sending *rtapi.Envelope_Pong message","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06","envelope":"cid:\"3\" pong:{}"}
+{"level":"info","ts":"2025-10-28T13:50:06.644Z","caller":"server/session_ws.go:458","msg":"Cleaning up closed client connection","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:50:06.645Z","caller":"server/session_ws.go:466","msg":"Cleaned up closed connection matchmaker","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:50:06.645Z","caller":"server/session_ws.go:470","msg":"Cleaned up closed connection tracker","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:50:06.645Z","caller":"server/session_ws.go:474","msg":"Cleaned up closed connection status registry","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:50:06.645Z","caller":"server/session_ws.go:478","msg":"Cleaned up closed connection session registry","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06"}
+{"level":"debug","ts":"2025-10-28T13:50:06.645Z","caller":"server/tracker.go:912","msg":"Processing presence event","joins":0,"leaves":1}
+{"level":"debug","ts":"2025-10-28T13:50:06.646Z","caller":"server/session_ws.go:554","msg":"Closed client connection","uid":"a2a6f28d-075e-41e2-a72f-98a19d83039d","sid":"fbebc77c-b404-11f0-82ee-006100a0eb06"}
+{"level":"info","ts":"2025-10-28T13:50:35.870Z","caller":"server/shutdown.go:50","msg":"Shutdown started"}
+{"level":"info","ts":"2025-10-28T13:50:35.870Z","caller":"server/shutdown.go:58","msg":"All authoritative matches stopped"}
+{"level":"info","ts":"2025-10-28T13:50:35.871Z","caller":"main.go:263","msg":"Shutdown complete"}

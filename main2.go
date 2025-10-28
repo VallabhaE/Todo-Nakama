@@ -101,6 +101,7 @@ func (m *match) MatchJoin(ctx context.Context, logger runtime.Logger, db *sql.DB
 	playerCount := len(Sockets[m.matchid])
 	globalMu.Unlock()
 
+	// Notify about player joined
 	joinMsg := map[string]interface{}{
 		"type":         "player_joined",
 		"player_count": playerCount,
@@ -108,12 +109,22 @@ func (m *match) MatchJoin(ctx context.Context, logger runtime.Logger, db *sql.DB
 	data, _ := json.Marshal(joinMsg)
 	dispatcher.BroadcastMessage(1, data, nil, nil, true)
 
+	// ✅ NEW PART: when 2 players joined, send "init_roles"
+	if playerCount == 2 {
+		box := GlobalMatchMap[m.matchid]
+		initMsg := map[string]interface{}{
+			"type": "init_roles",
+			"p1":   box.playerIDs[0],
+			"p2":   box.playerIDs[1],
+		}
+		initData, _ := json.Marshal(initMsg)
+		dispatcher.BroadcastMessage(1, initData, nil, nil, true)
+		logger.Info("🎮 Sent role assignment for match:", m.matchid)
+	}
+
 	return state
 }
 
-// ============================
-// LEAVE HANDLING
-// ============================
 func (m *match) MatchLeave(ctx context.Context, logger runtime.Logger, db *sql.DB,
 	nk runtime.NakamaModule, dispatcher runtime.MatchDispatcher,
 	tick int64, state interface{}, presences []runtime.Presence) interface{} {
@@ -178,7 +189,7 @@ func (m *match) MatchLoop(ctx context.Context, logger runtime.Logger, db *sql.DB
 		}
 
 		// Enforce turn
-		if playerIndex == box.turn {
+		if playerIndex != box.turn {
 			errMsg := map[string]interface{}{
 				"type":  "error",
 				"error": "Not your turn",

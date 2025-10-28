@@ -24,7 +24,9 @@ export default function TicTacToe({ name }) {
     setTimeout(() => setMessage(""), 4000);
   };
 
-  // Connection , Matchmaking
+  // =====================================
+  // 🧩 Connection + Matchmaking
+  // =====================================
   useEffect(() => {
     if (!name) return;
     let countdown;
@@ -33,7 +35,7 @@ export default function TicTacToe({ name }) {
     async function connect() {
       try {
         setIsLoading(true);
-        console.log("🔌 Connecting...");
+        console.log("🔌 Connecting to Nakama...");
 
         const session = await client.authenticateDevice(`device-${name}`, true);
         const s = client.createSocket(false, false);
@@ -44,7 +46,7 @@ export default function TicTacToe({ name }) {
         const t = await s.addMatchmaker("*", 2, 2, {}, {});
         setTicket(t);
 
-        // Countdown
+        // Countdown for matchmaking
         countdown = setInterval(() => {
           setTimeLeft((prev) => {
             if (prev <= 1) {
@@ -56,7 +58,7 @@ export default function TicTacToe({ name }) {
           });
         }, 1000);
 
-        // Timeout cancel
+        // Timeout after 30s if no match
         timeout = setTimeout(async () => {
           if (!matchFound) {
             await cancelQueue(s, t);
@@ -65,6 +67,9 @@ export default function TicTacToe({ name }) {
           }
         }, 30000);
 
+        // ==============================
+        // 🔔 When Match Found
+        // ==============================
         s.onmatchmakermatched = async (matched) => {
           clearInterval(countdown);
           clearTimeout(timeout);
@@ -73,30 +78,39 @@ export default function TicTacToe({ name }) {
           setMatchmakingFailed(false);
           setMatchId(matched.match_id);
 
-          const isFirst = matched.users[0].presence.user_id === session.user_id;
-          setPlayerNum(isFirst ? 1 : 2);
-
-          const match = await s.joinMatch(matched.match_id);
-          console.log("✅ Joined match:", match.match_id);
+          console.log("✅ Match found! Joining match:", matched.match_id);
+          await s.joinMatch(matched.match_id);
         };
 
+        // ==============================
+        // 🎮 Handle Match Data
+        // ==============================
         s.onmatchdata = (data) => {
           try {
             const msg = JSON.parse(new TextDecoder().decode(data.data));
             console.log("📨 Match update:", msg);
 
             switch (msg.type) {
+              case "init_roles":
+                if (msg.p1 === session.user_id) setPlayerNum(1);
+                else if (msg.p2 === session.user_id) setPlayerNum(2);
+                console.log("🎭 Role set -> Player", msg.p1 === session.user_id ? "1 (X)" : "2 (O)");
+                break;
+
               case "update":
                 updateBoard(msg);
                 break;
+
               case "game_over":
                 updateBoard(msg);
                 setWinner(msg.winner);
                 setGameOver(true);
                 break;
+
               case "error":
                 displayMessage(`🚨 ${msg.error}`);
                 break;
+
               default:
                 console.log("📦 Unknown message:", msg);
             }
@@ -107,13 +121,13 @@ export default function TicTacToe({ name }) {
       } catch (err) {
         console.error("❌ Connection error:", err);
         setIsLoading(false);
-        displayMessage("❌ Check Console for err Showing now.");
+        displayMessage("❌ Connection failed. Check console for details.");
       }
     }
 
     async function cancelQueue(s, t) {
       try {
-        console.log("Cancelling matchmaking... ");
+        console.log("🚫 Cancelling matchmaking...");
         if (t && s) await s.removeMatchmaker(t.ticket);
         setTicket(null);
         setIsLoading(false);
@@ -131,6 +145,9 @@ export default function TicTacToe({ name }) {
     };
   }, [name, client]);
 
+  // =====================================
+  // 🧮 Board Update
+  // =====================================
   const updateBoard = (msg) => {
     if (msg.board) {
       const flat = msg.board.flat();
@@ -139,6 +156,9 @@ export default function TicTacToe({ name }) {
     if (msg.next_turn) setTurn(msg.next_turn);
   };
 
+  // =====================================
+  // 🕹️ Player Move
+  // =====================================
   const makeMove = async (index) => {
     if (!matchFound || !socket || gameOver || board[index] !== 0) return;
 
@@ -146,7 +166,7 @@ export default function TicTacToe({ name }) {
     const y = index % 3;
 
     if (turn !== playerNum) {
-      displayMessage("⏸️ It is not your turn!");
+      displayMessage("⏸️ It's not your turn!");
       return;
     }
 
@@ -160,6 +180,9 @@ export default function TicTacToe({ name }) {
     await socket.sendMatchState(matchId, 1, msg);
   };
 
+  // =====================================
+  // 🎨 UI Helpers
+  // =====================================
   const symbolFor = (val) => (val === 1 ? "X" : val === 2 ? "O" : "");
 
   const Cell = ({ value, index }) => (
@@ -174,6 +197,9 @@ export default function TicTacToe({ name }) {
     </div>
   );
 
+  // =====================================
+  // 🧠 JSX
+  // =====================================
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-4">
       <div className="bg-white shadow-2xl rounded-xl p-8 max-w-md w-full my-8">
@@ -187,6 +213,7 @@ export default function TicTacToe({ name }) {
           </div>
         )}
 
+        {/* Waiting for match */}
         {!matchFound && ticket && !matchmakingFailed && (
           <div className="text-center p-6 bg-indigo-50 rounded-lg shadow-inner">
             <p className="text-lg font-bold text-indigo-700">🎟️ Matchmaking Ticket</p>
@@ -196,6 +223,7 @@ export default function TicTacToe({ name }) {
           </div>
         )}
 
+        {/* Matchmaking failed */}
         {matchmakingFailed && (
           <div className="text-center p-6 bg-red-50 rounded-lg shadow-inner">
             <p className="text-red-600 font-semibold">❌ Matchmaking Failed</p>
@@ -208,11 +236,12 @@ export default function TicTacToe({ name }) {
           </div>
         )}
 
+        {/* In game */}
         {matchFound && !gameOver && (
           <>
             <div className="text-center mb-6">
               <p className="text-xl font-bold">
-                You are Player {playerNum} ({playerNum === 1 ? "X" : "O"})
+                You are Player {playerNum ?? "?"} ({playerNum === 1 ? "X" : "O"})
               </p>
               <p
                 className={`text-2xl font-semibold mt-2 p-2 rounded-full inline-block ${
@@ -232,6 +261,7 @@ export default function TicTacToe({ name }) {
           </>
         )}
 
+        {/* Game Over */}
         {gameOver && (
           <div className="text-center p-8 bg-indigo-100 rounded-lg shadow-xl">
             <h2 className="text-3xl font-extrabold text-indigo-700 mb-3">🏁 Game Over!</h2>
