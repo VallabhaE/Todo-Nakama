@@ -1,8 +1,7 @@
 import { Client } from "@heroiclabs/nakama-js";
 
-// ✅ Use built-in browser fetch/WebSocket (no node-fetch, no ws)
 const SERVER_KEY = "defaultkey";
-const HOST = "nakama";
+const HOST = "localhost";
 const PORT = "7350";
 const USE_SSL = false;
 
