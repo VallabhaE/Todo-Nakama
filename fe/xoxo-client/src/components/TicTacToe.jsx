@@ -24,9 +24,6 @@ export default function TicTacToe({ name }) {
     setTimeout(() => setMessage(""), 4000);
   };
 
-  // =====================================
-  // 🧩 Connection + Matchmaking
-  // =====================================
   useEffect(() => {
     if (!name) return;
     let countdown;
@@ -46,7 +43,6 @@ export default function TicTacToe({ name }) {
         const t = await s.addMatchmaker("*", 2, 2, {}, {});
         setTicket(t);
 
-        // Countdown for matchmaking
         countdown = setInterval(() => {
           setTimeLeft((prev) => {
             if (prev <= 1) {
@@ -58,7 +54,6 @@ export default function TicTacToe({ name }) {
           });
         }, 1000);
 
-        // Timeout after 30s if no match
         timeout = setTimeout(async () => {
           if (!matchFound) {
             await cancelQueue(s, t);
@@ -67,9 +62,6 @@ export default function TicTacToe({ name }) {
           }
         }, 30000);
 
-        // ==============================
-        // 🔔 When Match Found
-        // ==============================
         s.onmatchmakermatched = async (matched) => {
           clearInterval(countdown);
           clearTimeout(timeout);
@@ -82,9 +74,6 @@ export default function TicTacToe({ name }) {
           await s.joinMatch(matched.match_id);
         };
 
-        // ==============================
-        // 🎮 Handle Match Data
-        // ==============================
         s.onmatchdata = (data) => {
           try {
             const msg = JSON.parse(new TextDecoder().decode(data.data));
@@ -145,9 +134,6 @@ export default function TicTacToe({ name }) {
     };
   }, [name, client]);
 
-  // =====================================
-  // 🧮 Board Update
-  // =====================================
   const updateBoard = (msg) => {
     if (msg.board) {
       const flat = msg.board.flat();
@@ -156,9 +142,6 @@ export default function TicTacToe({ name }) {
     if (msg.next_turn) setTurn(msg.next_turn);
   };
 
-  // =====================================
-  // 🕹️ Player Move
-  // =====================================
   const makeMove = async (index) => {
     if (!matchFound || !socket || gameOver || board[index] !== 0) return;
 
@@ -180,9 +163,6 @@ export default function TicTacToe({ name }) {
     await socket.sendMatchState(matchId, 1, msg);
   };
 
-  // =====================================
-  // 🎨 UI Helpers
-  // =====================================
   const symbolFor = (val) => (val === 1 ? "X" : val === 2 ? "O" : "");
 
   const Cell = ({ value, index }) => (
@@ -197,9 +177,6 @@ export default function TicTacToe({ name }) {
     </div>
   );
 
-  // =====================================
-  // 🧠 JSX
-  // =====================================
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-4">
       <div className="bg-white shadow-2xl rounded-xl p-8 max-w-md w-full my-8">
