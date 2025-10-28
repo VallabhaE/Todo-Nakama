@@ -1,7 +1,7 @@
 import { Client } from "@heroiclabs/nakama-js";
 
 const SERVER_KEY = "defaultkey";
-const HOST = "localhost";
+const HOST = "http://50.19.166.171";
 const PORT = "7350";
 const USE_SSL = false;
 
