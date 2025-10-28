@@ -50,8 +50,7 @@ services:
     build:
       context: ./fe/xoxo-client
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
+    network_mode: host
     restart: unless-stopped
     depends_on:
       - nakama
