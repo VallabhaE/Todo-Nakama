@@ -9,6 +9,7 @@ services:
       - "8080"
       - "5432"
     image: postgres:12.2-alpine
+    network_mode: host
     ports:
       - "5432:5432"
       - "8080:8080"
@@ -26,7 +27,8 @@ services:
         /nakama/nakama migrate up --database.address postgres:localdb@postgres:5432/nakama &&
         exec /nakama/nakama --config /nakama/data/local.yml --database.address postgres:localdb@postgres:5432/nakama 
     volumes:
-      - ./nakama_logs:/nakama/logs       
+      - ./nakama_logs:/nakama/logs 
+    network_mode: host      
     expose:
       - "7349"
       - "7350"
@@ -48,7 +50,8 @@ services:
       context: ./fe/xoxo-client
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "443:80"
+    network_mode: host
     restart: unless-stopped
     depends_on:
       - nakama
