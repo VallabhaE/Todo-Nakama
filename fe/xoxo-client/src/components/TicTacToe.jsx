@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Client } from "@heroiclabs/nakama-js";
+import { HOST } from "../nakama/nakamaHelper";
 
 export default function TicTacToe({ name }) {
-  const [client] = useState(() => new Client("defaultkey", "127.0.0.1", "7350", false));
+  const [client] = useState(() => new Client("defaultkey", HOST, "7350", false));
   const [socket, setSocket] = useState(null);
   const [ticket, setTicket] = useState(null);
   const [matchFound, setMatchFound] = useState(false);
