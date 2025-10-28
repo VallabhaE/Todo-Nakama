@@ -48,7 +48,7 @@ services:
       context: ./fe/xoxo-client
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "443:80"
     restart: unless-stopped
     depends_on:
       - nakama
