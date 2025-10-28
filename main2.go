@@ -178,7 +178,7 @@ func (m *match) MatchLoop(ctx context.Context, logger runtime.Logger, db *sql.DB
 		}
 
 		// Enforce turn
-		if playerIndex != box.turn {
+		if playerIndex == box.turn {
 			errMsg := map[string]interface{}{
 				"type":  "error",
 				"error": "Not your turn",
