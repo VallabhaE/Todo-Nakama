@@ -1,0 +1,9 @@
+runtime:
+  path: "/nakama/data/modules"  
+  engine: "go"
+
+logger:
+  level: "debug"
+  format: "json"
+  output: stdout
+  file: "/nakama/logs/nakama.log"
