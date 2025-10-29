@@ -15,7 +15,7 @@ http://54.90.229.73:5173/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/Todo-Nakama.git
+git clone [repo]
 cd Todo-Nakama
 docker compose up
 
