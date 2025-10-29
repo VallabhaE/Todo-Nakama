@@ -19,4 +19,5 @@ git clone https://github.com/<your-username>/Todo-Nakama.git
 cd Todo-Nakama
 docker compose up
 
+Note: if any change happen on fe , please delete old build and build it again. then docker compose up.
 
