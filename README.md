@@ -5,6 +5,12 @@ The project demonstrates real-time communication and synchronization using Nakam
 
 ---
 
+# Public URL
+
+http://54.90.229.73:5173/
+
+---
+
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
