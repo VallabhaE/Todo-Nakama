@@ -25,7 +25,7 @@ var (
 )
 
 func InitModule(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runtime.NakamaModule, initializer runtime.Initializer) error {
-	logger.Info("✅ Backend module loaded")
+	logger.Info("Backend module loaded")
 
 	if err := initializer.RegisterMatch("xoxo", newMatch); err != nil {
 		logger.Error("Failed to register match:", err)
@@ -36,7 +36,7 @@ func InitModule(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runti
 		return err
 	}
 
-	logger.Info("✅ Match type 'xoxo' registered")
+	logger.Info(" Match type 'xoxo' registered")
 	return nil
 }
 
@@ -56,7 +56,7 @@ func (m *match) MatchInit(ctx context.Context, logger runtime.Logger, db *sql.DB
 	Sockets[m.matchid] = []runtime.Presence{}
 	globalMu.Unlock()
 
-	logger.Info("✅ Match initialized:", m.matchid)
+	logger.Info("Match initialized:", m.matchid)
 	return map[string]interface{}{}, 1, "xoxo"
 }
 
@@ -194,7 +194,7 @@ func (m *match) MatchLoop(ctx context.Context, logger runtime.Logger, db *sql.DB
 			continue
 		}
 
-		// ✅ Apply move
+		// Apply move
 		box.board[move.X][move.Y] = playerIndex
 		box.moves++
 
@@ -261,7 +261,7 @@ func (m *match) MatchTerminate(ctx context.Context, logger runtime.Logger, db *s
 	delete(Sockets, m.matchid)
 	globalMu.Unlock()
 
-	logger.Info("🧹 Match terminated:", m.matchid)
+	logger.Info("Match terminated:", m.matchid)
 	return state
 }
 
@@ -274,7 +274,7 @@ func (m *match) MatchSignal(ctx context.Context, logger runtime.Logger, db *sql.
 func MatchmakerMatched(ctx context.Context, logger runtime.Logger, db *sql.DB,
 	nk runtime.NakamaModule, entries []runtime.MatchmakerEntry) (string, error) {
 
-	logger.Info("🎯 Matchmaker matched:", len(entries), "players")
+	logger.Info("Matchmaker matched:", len(entries), "players")
 
 	params := map[string]interface{}{
 		"created_at": time.Now().Unix(),
@@ -284,6 +284,6 @@ func MatchmakerMatched(ctx context.Context, logger runtime.Logger, db *sql.DB,
 		return "", err
 	}
 
-	logger.Info("✅ Created match:", matchID)
+	logger.Info("Created match:", matchID)
 	return matchID, nil
 }
