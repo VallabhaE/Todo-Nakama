@@ -11,9 +11,6 @@ import (
 	"github.com/heroiclabs/nakama-common/runtime"
 )
 
-// ============================
-// DATA STRUCTURES
-// ============================
 type Box struct {
 	board     [3][3]int
 	moves     int
@@ -27,9 +24,6 @@ var (
 	globalMu       sync.Mutex
 )
 
-// ============================
-// INIT MODULE
-// ============================
 func InitModule(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runtime.NakamaModule, initializer runtime.Initializer) error {
 	logger.Info("✅ Backend module loaded")
 
@@ -46,9 +40,6 @@ func InitModule(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runti
 	return nil
 }
 
-// ============================
-// MATCH STRUCT + INIT
-// ============================
 type match struct {
 	matchid string
 }
@@ -69,9 +60,6 @@ func (m *match) MatchInit(ctx context.Context, logger runtime.Logger, db *sql.DB
 	return map[string]interface{}{}, 1, "xoxo"
 }
 
-// ============================
-// JOIN HANDLING
-// ============================
 func (m *match) MatchJoinAttempt(ctx context.Context, logger runtime.Logger, db *sql.DB,
 	nk runtime.NakamaModule, dispatcher runtime.MatchDispatcher,
 	tick int64, state interface{}, presence runtime.Presence, metadata map[string]string) (interface{}, bool, string) {
@@ -109,7 +97,6 @@ func (m *match) MatchJoin(ctx context.Context, logger runtime.Logger, db *sql.DB
 	data, _ := json.Marshal(joinMsg)
 	dispatcher.BroadcastMessage(1, data, nil, nil, true)
 
-	// ✅ NEW PART: when 2 players joined, send "init_roles"
 	if playerCount == 2 {
 		box := GlobalMatchMap[m.matchid]
 		initMsg := map[string]interface{}{
@@ -152,9 +139,6 @@ func (m *match) MatchLeave(ctx context.Context, logger runtime.Logger, db *sql.D
 	return state
 }
 
-// ============================
-// TURN BASED GAME LOGIC
-// ============================
 type Move struct {
 	X int `json:"x"`
 	Y int `json:"y"`
@@ -182,13 +166,11 @@ func (m *match) MatchLoop(ctx context.Context, logger runtime.Logger, db *sql.DB
 			}
 		}
 
-		// ❌ Old bug: was skipping valid players
 		if playerIndex == -1 {
 			globalMu.Unlock()
 			continue
 		}
 
-		// Enforce turn
 		if playerIndex != box.turn {
 			errMsg := map[string]interface{}{
 				"type":  "error",
@@ -252,9 +234,6 @@ func (m *match) MatchLoop(ctx context.Context, logger runtime.Logger, db *sql.DB
 	return state
 }
 
-// ============================
-// WINNER CHECK
-// ============================
 func checkWinner(b [3][3]int) int {
 	for i := 0; i < 3; i++ {
 		if b[i][0] != 0 && b[i][0] == b[i][1] && b[i][1] == b[i][2] {
@@ -273,9 +252,6 @@ func checkWinner(b [3][3]int) int {
 	return 0
 }
 
-// ============================
-// TERMINATION + SIGNAL
-// ============================
 func (m *match) MatchTerminate(ctx context.Context, logger runtime.Logger, db *sql.DB,
 	nk runtime.NakamaModule, dispatcher runtime.MatchDispatcher,
 	tick int64, state interface{}, graceSeconds int) interface{} {
@@ -295,9 +271,6 @@ func (m *match) MatchSignal(ctx context.Context, logger runtime.Logger, db *sql.
 	return state, ""
 }
 
-// ============================
-// MATCHMAKER
-// ============================
 func MatchmakerMatched(ctx context.Context, logger runtime.Logger, db *sql.DB,
 	nk runtime.NakamaModule, entries []runtime.MatchmakerEntry) (string, error) {
 
