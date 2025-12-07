@@ -7,7 +7,7 @@ The project demonstrates real-time communication and synchronization using Nakam
 
 # Public URL
 
-http://54.90.229.73:5173/
+http://54.90.229.73:5173/ (removed now.)
 
 ---
 
@@ -18,6 +18,11 @@ http://54.90.229.73:5173/
 git clone [repo]
 cd Todo-Nakama
 docker compose up
+or
 
+cd k8s
+# create a k8s cluster by kind or minikube
+1. kubectl apply -f namespace.yaml
+2. kubectl apply -f .
 Note: if any change happen on fe , please delete old build and build it again. then docker compose up.
 
