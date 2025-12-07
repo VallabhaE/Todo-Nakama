@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-deployment
+  namespace: game
+spec:
+  selector:
+    matchLabels:
+      app: game-pod
+  template:
+    metadata:
+      namespace: game
+      labels:
+        app: game-pod
+    spec:
+      containers:
+      - name: game-pod
+        image: vallabhar/nakama-server
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 7350
+          - containerPort: 7349
+          - containerPort: 7351
+        env:
+        - name: NAKAMA_RUNTIME_PATH
+          value: "/nakama/data/modules"
+        - name: NAKAMA_RUNTIME_ENGINE
+          value: "go"
+        command:
+          - "/bin/sh"
+          - "-c"
+        args:
+          - >
+            /nakama/nakama migrate up --database.address=postgres://postgres:localdb@db-service:5432/nakama &&
+            exec /nakama/nakama --database.address=postgres://postgres:localdb@db-service:5432/nakama 

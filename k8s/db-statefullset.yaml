@@ -1,0 +1,43 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: pgservice
+  namespace: game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      name: postgres
+      namespace: game
+      labels:
+        app: db
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:12.2-alpine
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: "nakama"
+            - name: POSTGRES_PASSWORD
+              value: "localdb"
+          volumeMounts:
+            - name:  gamedata-storage
+              mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+    - metadata:
+        name: gamedata-storage
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi
+        storageClassName: "gamedata-pv"
+
+
+

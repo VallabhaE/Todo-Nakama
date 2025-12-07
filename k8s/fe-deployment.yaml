@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: fe-deployment
+  namespace: game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: fe
+  template:
+    metadata:
+      labels:
+        app: fe
+    spec:
+      containers:
+        - name: fe-container # Note: the fe container is hardcoded connect with local host (build code by updating if needed.)
+          image: vallabhar/nakama-fe
+          ports:
+            - containerPort: 80

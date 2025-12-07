@@ -1,0 +1,17 @@
+runtime:
+  path: "/nakama/data/modules"  
+  engine: "go"
+
+logger:
+  level: "debug"
+  format: "json"
+  output: stdout
+  file: "/nakama/logs/nakama.log"
+
+server:
+  cors:
+    enabled: true
+    allow_origin: "*"
+    allow_credentials: false
+    allow_headers: ["Authorization", "Content-Type"]
+    allow_methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
